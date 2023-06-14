@@ -52,7 +52,8 @@ If you found this repo helpful, please give it a (⭐). Thank you!
 
 ## Demo
 
-You can check out the live demo of the application <a href="https://omaghd.com/projects/otickets" target="_blank">here</a>.
+Demo Video: [https://youtu.be/fZGz6KKq8uw](https://youtu.be/fZGz6KKq8uw)
+Online Demo: [https://omaghd.com/projects/otickets](https://omaghd.com/projects/otickets)
 
 <img src="homepage.jpeg" alt="OTickets - Screenshot" width="100%">
 
