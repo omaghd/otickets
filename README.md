@@ -118,6 +118,7 @@ Online Demo: [https://omaghd.com/projects/otickets](https://omaghd.com/projects/
 - Composer
 - Node.js
 - NPM
+- PNPM
 
 ### Installation Steps
 
@@ -134,7 +135,7 @@ Online Demo: [https://omaghd.com/projects/otickets](https://omaghd.com/projects/
    ```
 
    ```bash
-   cd path/to/frontend && npm install
+   cd path/to/frontend && pnpm install
    ```
 
 3. Create a copy of your .env file
@@ -182,7 +183,7 @@ Online Demo: [https://omaghd.com/projects/otickets](https://omaghd.com/projects/
 9. Launch the backend and frontend in separate terminals
 
    ```bash
-   cd path/to/frontend && npm run dev
+   cd path/to/frontend && pnpm dev
    ```
 
    ```bash
