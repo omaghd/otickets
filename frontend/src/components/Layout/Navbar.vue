@@ -65,6 +65,7 @@ const updateNavigation = () => {
 }
 
 const API_URL = import.meta.env.VITE_API_URL
+const DEFAULT_USER_IMAGE_PATH = import.meta.env.VITE_DEFAULT_USER_IMAGE_PATH
 
 const notificationsStore = useNotificationsStore()
 const { notificationsCounts, notifications } = storeToRefs(notificationsStore)
@@ -94,7 +95,7 @@ const logout = async () => {
   else toast.error(message.value)
 }
 
-const picture = computed(() => API_URL + (user.value.picture ?? 'storage/examples/user.jpg'))
+const picture = computed(() => API_URL + (user.value.picture ?? DEFAULT_USER_IMAGE_PATH))
 
 const markAsRead = async (id: string) => {
   await notificationsStore.markAsRead(id)

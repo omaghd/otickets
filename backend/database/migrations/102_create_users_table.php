@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->string("phone");
             $table->string("picture")
                 ->nullable()
-                ->default('storage/examples/user.jpg');
+                ->default(config('user.default_user_image_path'));
             $table->timestamp('email_verified_at')
                 ->nullable();
             $table->string('password');

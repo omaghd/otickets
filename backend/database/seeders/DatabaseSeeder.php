@@ -26,15 +26,20 @@ class DatabaseSeeder extends Seeder
                 'password' => 'OTickets@00'
             ]);
 
+        $mainAgentCreated = false;
+
         Department::factory()
             ->count(4)
             ->create()
-            ->each(function (Department $department) {
+            ->each(function (Department $department) use (&$mainAgentCreated) {
                 $department->agents()->save(
                     User::factory()
                         ->agent()
-                        ->create(['email' => 'agent@omaghd.com'])
+                        ->create(['email' => $mainAgentCreated ? fake()->unique()->safeEmail() : 'agent@omaghd.com'])
                 );
+
+                $mainAgentCreated = true;
+
                 $department->agents()->saveMany(
                     User::factory()
                         ->agent()

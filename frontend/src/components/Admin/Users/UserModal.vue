@@ -45,8 +45,9 @@ const method = computed(() => (props.userToEdit.id ? 'put' : 'post'))
 const isAgent = computed(() => role.value?.value === 'agent')
 
 const API_URL = import.meta.env.VITE_API_URL
+const DEFAULT_USER_IMAGE_PATH = import.meta.env.VITE_DEFAULT_USER_IMAGE_PATH
 
-const defaultImagePath = API_URL + 'storage/examples/user.jpg'
+const defaultImagePath = API_URL + DEFAULT_USER_IMAGE_PATH
 
 const previewImage = ref(defaultImagePath)
 

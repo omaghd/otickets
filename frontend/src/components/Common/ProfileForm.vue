@@ -25,8 +25,9 @@ const store = useAuthStore()
 const { user, isSuccess, message, errors, isLoading } = storeToRefs(store)
 
 const API_URL = import.meta.env.VITE_API_URL
+const DEFAULT_USER_IMAGE_PATH = import.meta.env.VITE_DEFAULT_USER_IMAGE_PATH
 
-const picture = computed(() => API_URL + (user.value.picture ?? 'storage/examples/user.jpg'))
+const picture = computed(() => API_URL + (user.value.picture ?? DEFAULT_USER_IMAGE_PATH))
 
 const name = ref(user.value.name ?? '')
 const phone = ref(user.value.phone ?? '')
