@@ -75,10 +75,17 @@ class UserService
         return $responseTimes;
     }
 
-
     public function saveProfilePicture(User $user, UploadedFile $picture): void
     {
-        SaveProfilePictureJob::dispatch($user, $picture)
+        $fileData = [
+            'contents' => base64_encode(file_get_contents($picture->getRealPath())),
+            'original_name' => $picture->getClientOriginalName(),
+            'mime_type' => $picture->getMimeType(),
+            'size' => $picture->getSize(),
+            'extension' => $picture->getClientOriginalExtension(),
+        ];
+
+        SaveProfilePictureJob::dispatch($user->id, $fileData)
             ->afterResponse();
     }
 
