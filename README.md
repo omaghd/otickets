@@ -154,48 +154,58 @@ Online Demo: [https://omaghd.com/projects/otickets](https://omaghd.com/projects/
    DB_PASSWORD=
    ```
 
-5. Generate an app encryption key
+5. In the .env file in the backend, you can use Mailtrap for testing email sending in the development environment
+
+   ```env
+    MAIL_MAILER=smtp
+    MAIL_HOST=sandbox.smtp.mailtrap.io
+    MAIL_PORT=2525
+    MAIL_USERNAME=XXXXXXXX
+    MAIL_PASSWORD=XXXXXXXX
+   ```
+
+6. Generate an app encryption key
 
    ```bash
    cd path/to/backend && php artisan key:generate
    ```
 
-6. Migrate and seed the database
+7. Migrate and seed the database
 
    ```bash
    cd path/to/backend && php artisan migrate --seed
    ```
 
-7. Launch the backend
+8. Launch the backend
 
    ```bash
    cd path/to/backend && php artisan serve
    ```
 
-8. Change the .env file in the frontend to point to the backend
+9. Change the .env file in the frontend to point to the backend
 
    ```env
    VITE_API_URL='http://127.0.0.1:8000/'
    VITE_API_URL_API='http://127.0.0.1:8000/api/'
    ```
 
-9. Launch the backend and frontend in separate terminals
+10. Launch the backend and frontend in separate terminals
 
-   ```bash
-   cd path/to/frontend && pnpm dev
-   ```
+    ```bash
+    cd path/to/frontend && pnpm dev
+    ```
 
-   ```bash
-   cd path/to/backend && php artisan serve
-   ```
+    ```bash
+    cd path/to/backend && php artisan serve
+    ```
 
-10. Visit the application
+11. Visit the application
 
     ```bash
     http://localhost:8000
     ```
 
-11. Link the storage folder in the backend
+12. Link the storage folder in the backend
 
     ```bash
     cd path/to/backend && php artisan storage:link
